@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd" xmlns:aop="http://www.springframework.org/schema/aop">
+
+    <bean id="testConnectionPool" class="com.example.database.ConnectionPoolFactory">
+        <constructor-arg name="driver" value="${unit.test.db.driver}"/>
+        <constructor-arg name="url" value="${unit.test.db.url}"/>
+        <constructor-arg name="username" value="${unit.test.db.username}"/>
+        <constructor-arg name="password" value="${unit.test.db.password}"/>
+    </bean>
+
+    <bean id="testConnectionPoolM" class="com.example.database.ConnectionPoolFactory">
+        <constructor-arg name="driver" value="${unit.test.db.driver}"/>
+        <constructor-arg name="url" value="${unit.test.db.url}"/>
+        <constructor-arg name="username" value="${unit.test.db.username}"/>
+        <constructor-arg name="password" value="${unit.test.db.password}"/>
+        <constructor-arg name="maxConnection" value="2"/>
+    </bean>
+
+    <bean id="testConnectionPoolLL" class="com.example.database.ConnectionPoolFactory">
+        <constructor-arg name="driver" value="${unit.test.db.driver}"/>
+        <constructor-arg name="url" value="${unit.test.db.url}"/>
+        <constructor-arg name="username" value="${unit.test.db.username}"/>
+        <constructor-arg name="password" value="${unit.test.db.password}"/>
+        <constructor-arg name="lazyLoad" value="true"/>
+    </bean>
+
+    <bean id="testConnectionPoolMLL" class="com.example.database.ConnectionPoolFactory">
+        <constructor-arg name="driver" value="${unit.test.db.driver}"/>
+        <constructor-arg name="url" value="${unit.test.db.url}"/>
+        <constructor-arg name="username" value="${unit.test.db.username}"/>
+        <constructor-arg name="password" value="${unit.test.db.password}"/>
+        <constructor-arg name="lazyLoad" value="true"/>
+        <constructor-arg name="maxConnection" value="2"/>
+    </bean>
+
+</beans>

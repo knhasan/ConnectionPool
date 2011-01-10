@@ -1,0 +1,12 @@
+A connection pool example. The connection pool handler should be configured
+using spring and injected where appropriate. For example, please refer to the
+test setup.
+
+Requirements:
+JDK 1.6 or above
+Maven 2.2
+
+Build:
+To compile, test and install type in:
+$mvn install
+
